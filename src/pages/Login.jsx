@@ -4,37 +4,48 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const navigate = useNavigate();
-
-    let info = {};
-    let data = {};
     let config = {};
+
+    // WHAT IS UP
+
+    // YOUR REST API AUTH IS GIVING 401 because credentials that you gave is incorrect
+    // your data was user_task user_task toko It did not work out . Your api might be correct but,
+    // make sure you are giving right login and password that works successfully. Check that by yourself
+    
+    // cheers :)
 
     const onFinish = (values) => {
         console.log('Success:', values);
-        info = { ...values }
-        data = {
-            "_username": info.username,
-            "_password": info.password,
-            "_subdomain": info.subdomain
-        }
+
         config = {
             method: "post",
-            url: "https://" + info.subdomain + ".ox-sys.com/security/auth_check",
+            url: "https://" + values.subdomain + ".ox-sys.com/security/auth_check",
             headers: {
-                // 'Content-type': 'application/x-www-form-urlencoded',
+                'Content-type': 'application/x-www-form-urlencoded',
                 'accept': 'application/json'
             },
-            data
+            data: {
+                "_username": values.username,
+                "_password": values.password,
+                "_subdomain": values.subdomain
+            }
         }
-        axios(config).then((res) => {
+
+        const res = axios(config).then((res) => {
             console.log(res)
+            return res;
         }).catch((err) => {
             console.log(err)
         })
-        localStorage.setItem("config", config)
-        console.log(JSON.parse(localStorage.getItem('items')))
 
-        navigate("/")
+        //if auth is success 
+        if (res.data.status === 201) {
+            localStorage.setItem("config", config)
+            navigate("/")
+        } else {
+            // showing error
+        }
+
     };
 
     const onFinishFailed = (errorInfo) => {

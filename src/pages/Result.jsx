@@ -15,8 +15,6 @@ const Result = (props) => {
                     marginTop: "10%"
                 }}
                 title="Result">
-
-
             </Card>
         </div>
     )
