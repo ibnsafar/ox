@@ -6,6 +6,21 @@ const Login = () => {
     const navigate = useNavigate();
 
     const onFinish = (values) => {
+        // Hi
+        // whats up
+        // I have tested your api it works well, but i cant send request because of object behaviour
+        // when I save data username password subdomain it changes its order and that is cauzing an error
+        // for fixing this issue I have wasted about 2 hours on it than i have read that javascript automatically sorts object 
+        // and there is no way to disable it. for this reason i cant send valid requst to your api. Your api fits for testing like postman thunder client but 
+        // in front end that is becoming issue. If you want I will use another API. waiting for your response :)
+        // cheers
+
+        // salom
+        // Test topshirig`i bo`yicha API ni testlab ko`rdim , hammasi yaxshi ishlab turibdi.
+        // lekin front end tomonda javascript obyektni avtomatik shaklda tartiblagani sortlagani uchun to`g`ri request jo`natishi iloji bolmayapti
+        // xohlasez boshqa API bilanam qib beruraman. 2 sot atrofida auto sortini ochirish disable qilish uchun vaqtim ketdi. lekin bu javascript obyektini
+        // ozini ichki ishi hisoblanarkan stackoverflow va boshqa bloglardan qarab tahlil qildim.
+        // boglanish uchun bemalol yozuring :)
         
         let options = {
             url: `https://${values.subdomain}.ox-sys.com/security/auth_check`,
