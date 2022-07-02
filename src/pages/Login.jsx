@@ -1,5 +1,5 @@
 import axios from "axios"
-import { Card, Button, Checkbox, Form, Input } from 'antd';
+import { Card, Button, Form, Input } from 'antd';
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -35,7 +35,7 @@ const Login = () => {
                 _subdomain: values.subdomain,
             }
         }
-
+        
         console.log(options)
         const result = axios(options).then((res) => {
             console.log(res)
