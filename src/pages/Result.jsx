@@ -1,7 +1,6 @@
 import { Card } from "antd";
-import { useEffect } from "react";
 
-const Result = (props) => {
+const Result = () => {
 
     console.log(JSON.parse(localStorage.getItem('items')))
 
