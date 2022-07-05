@@ -21,7 +21,7 @@ const Login = () => {
         // xohlasez boshqa API bilanam qib beruraman. 2 sot atrofida auto sortini ochirish disable qilish uchun vaqtim ketdi. lekin bu javascript obyektini
         // ozini ichki ishi hisoblanarkan stackoverflow va boshqa bloglardan qarab tahlil qildim.
         // boglanish uchun bemalol yozuring :)
-        
+
         let options = {
             url: `https://${values.subdomain}.ox-sys.com/security/auth_check`,
             method: 'POST',
@@ -35,14 +35,14 @@ const Login = () => {
                 _subdomain: values.subdomain,
             }
         }
-        
+
         console.log(options)
         const result = axios(options).then((res) => {
             console.log(res)
             return res;
         })
+        // localStorage.setItem("result", result)
     };
-
     // body: `_username=${values.username}&_password=${values.password}&_subdomain=${values.subdomain}`
 
     const onFinishFailed = (errorInfo) => {
