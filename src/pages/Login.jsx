@@ -42,6 +42,7 @@ const Login = () => {
             return res;
         })
         // localStorage.setItem("result", result)
+        // localStorage.getItem("result")
     };
     // body: `_username=${values.username}&_password=${values.password}&_subdomain=${values.subdomain}`
 
